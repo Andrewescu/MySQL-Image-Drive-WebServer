@@ -35,18 +35,14 @@ def account_creation():
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
-        
         cursor.execute(f"SELECT * FROM users WHERE username = '{username}' ")
-        
         result = cursor.fetchone()
         if result != None:
             # The username already exists
             return redirect('/accountcreation?error=username')
         else:
             # The username does not exist already and can be created
-            
             cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
-            
             cnx.commit()
             return redirect("/login")
         
@@ -63,10 +59,9 @@ def user_login():
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
-
         cursor.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
-
         result = cursor.fetchone()
+        
         if result:
             # The username and password match a row in the table
             session['logged_in'] = True
@@ -113,8 +108,7 @@ def view_images():
 
     if logged_in == True:
         # Retrieve all the images from the database
-        query = "SELECT * FROM images"
-        cursor.execute(query)
+        cursor.execute("SELECT * FROM images")
         images = cursor.fetchall()
         return render_template("images.html", images=images)
     else:
