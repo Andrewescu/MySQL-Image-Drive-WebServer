@@ -4,7 +4,7 @@ import base64
 import random
 import string
 import os
-from dotenv import load_dotenv
+
 
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_USERNAME = os.getenv('DATABASE_USERNAME')
