@@ -14,7 +14,7 @@ DATABASE_NAME = os.getenv('DATABASE_NAME')
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'my_secret_key'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Create a connection to the MySQL database
 cnx = connect(user=DATABASE_USERNAME, password=DATABASE_PASSWORD, host=DATABASE_HOST, database=DATABASE_NAME)
