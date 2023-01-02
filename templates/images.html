@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Images</title>
+    <style>
+        img {
+        
+        width: 600px;
+        height:200px;
+        display: block;
+        margin: 0 auto;
+        }
+
+        .outerCountainer 
+        {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        }
+
+        .innerCountainer
+        {
+          position: absolute;
+          top:10%;
+        }
+
+        .imageCountainer
+        {
+          padding: 10px;
+          border: 4px solid black;
+        }
+
+
+
+
+
+
+
+
+      </style>
+  </head>
+  <body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1; background-color: #333;">
+      <div style="display: flex; justify-content: center; align-items: center; height: 50px;">
+        <a href="/" style="color: white; text-decoration: none; padding: 0 20px;">Home</a>
+        <a href="/logout" style="color: white; text-decoration: none; padding: 0 20px;">Logout</a>
+      </div>
+  </nav>
+    <div class="outerCountainer">
+      <div class="innerCountainer">
+      <h1>View Images</h1>
+      <div class="imageCountainer">
+        {% for image in images %}
+          <div id="{{image[3]}}">
+          <img src="data:image/png;base64, {{ image[1].decode() }}" alt="image" id="{{image[3]}}">
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

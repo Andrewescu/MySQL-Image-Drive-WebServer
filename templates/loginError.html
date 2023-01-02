@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+    .outerCountainer 
+        {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        }
+
+
+    .borderContainer {
+        position: absolute;
+        top:10%;
+        
+        border: 1px solid black;
+        border-radius: 2%;
+        height: 500px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .inputContainer {
+      position: absolute;
+      top:45%;
+    }
+
+    h2 {
+        position: absolute;
+        top:10%;
+    }
+    </style>
+</head>
+<body>
+
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1; background-color: #333;">
+    <div style="display: flex; justify-content: center; align-items: center; height: 50px;">
+      <a href="/" style="color: white; text-decoration: none; padding: 0 20px;">Home</a>
+      <a href="/logout" style="color: white; text-decoration: none; padding: 0 20px;">Logout</a>
+    </div>
+</nav>
+    <div class="outerCountainer">
+      <div class="borderContainer">
+        <h2>Image-Drive.com</h2>
+        <div class="inputContainer">
+          <h3>User Login</h3>
+          <form method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" style="margin: 10px"><br>
+            <form method="post">
+              <label for="password" style="margin: 10px">Password:</label><br>
+              <input type="password" id="password" name="password" style="margin: 10px"><br>
+              <input type="submit" value="Submit" style="margin: 5px">
+            </form>
+          </form>   
+          <h4>Error! Login Invalid</h4>
+        </div>
+      </div>
+    </div>
+    
+    
+     
+</body>
+</html>

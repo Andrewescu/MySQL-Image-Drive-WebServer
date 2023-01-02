@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+    .outerCountainer 
+        {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        }
+
+
+    .borderContainer {
+        position: absolute;
+        top:10%;
+        
+        border: 1px solid black;
+        border-radius: 2%;
+        height: 500px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .buttonContainer {
+        position: absolute;
+        top:60%;
+    }
+
+    .inputButton {
+        margin: 10px;
+        height: 50px;
+        width: 110px;
+    }
+
+    h2 {
+        position: absolute;
+        top:10%;
+    }
+    
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1; background-color: #333;">
+        <div style="display: flex; justify-content: center; align-items: center; height: 50px;">
+          <a href="/" style="color: white; text-decoration: none; padding: 0 20px;">Home</a>
+          <a href="/logout" style="color: white; text-decoration: none; padding: 0 20px;">Logout</a>
+        </div>
+    </nav>
+      
+    <div class="outerCountainer">
+        <div class="borderContainer">
+            <h2>Image-Drive.com</h2>
+
+            <div class="buttonContainer">
+                <form>
+                    <input type="button" value="Login" onclick="location.href='/login'" class="inputButton">
+                </form>
+                <form>
+                    <input type="button" value="Create Account" onclick="location.href='/accountcreation'" class="inputButton">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
